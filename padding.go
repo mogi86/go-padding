@@ -31,7 +31,6 @@ func Pad(source string, length int, padStr string, padType PadType) (string, err
 			} else if utf8.RuneCountInString(str) > length {
 				var exceeded = utf8.RuneCountInString(str) - length
 				str = str[exceeded : length+exceeded]
-				str = str[:length]
 				break
 			}
 		}
