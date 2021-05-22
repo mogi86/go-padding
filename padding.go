@@ -54,9 +54,5 @@ func Pad(source string, length int, padStr string, padType PadType) (string, err
 
 // isAlreadyReachedLength checks if the length of the source has already exceeded the specified length
 func isAlreadyReachedLength(source string, length int) bool {
-	if utf8.RuneCountInString(source) >= length {
-		return true
-	} else {
-		return false
-	}
+	return utf8.RuneCountInString(source) >= length
 }
