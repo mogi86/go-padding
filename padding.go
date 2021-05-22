@@ -14,12 +14,11 @@ const (
 
 // Pad pad string to your string
 func Pad(source string, length int, padStr string, padType PadType) (string, error) {
-	var str string
-	str = source
-
 	if isAlreadyReachedLength(source, length) {
 		return source, nil
 	}
+
+	str := source
 
 	switch padType {
 	case PadLeft:
@@ -28,7 +27,9 @@ func Pad(source string, length int, padStr string, padType PadType) (string, err
 
 			if utf8.RuneCountInString(str) == length {
 				break
-			} else if utf8.RuneCountInString(str) > length {
+			}
+
+			if utf8.RuneCountInString(str) > length {
 				var exceeded = utf8.RuneCountInString(str) - length
 				str = str[exceeded : length+exceeded]
 				break
@@ -40,7 +41,9 @@ func Pad(source string, length int, padStr string, padType PadType) (string, err
 
 			if utf8.RuneCountInString(str) == length {
 				break
-			} else if utf8.RuneCountInString(str) > length {
+			}
+
+			if utf8.RuneCountInString(str) > length {
 				str = str[:length]
 				break
 			}
