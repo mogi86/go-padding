@@ -8,11 +8,13 @@ import (
 type PadType int
 
 const (
+	// PadLeft is padding type to pad into left side.
 	PadLeft PadType = iota
+	// PadRight is padding type to pad into right side.
 	PadRight
 )
 
-// Pad pad string to your string
+// Pad pad string to your string.
 func Pad(source string, length int, padStr string, padType PadType) (string, error) {
 	if isAlreadyReachedLength(source, length) {
 		return source, nil
@@ -55,7 +57,7 @@ func Pad(source string, length int, padStr string, padType PadType) (string, err
 	return str, nil
 }
 
-// isAlreadyReachedLength checks if the length of the source has already exceeded the specified length
+// isAlreadyReachedLength checks if the length of the source has already exceeded the specified length.
 func isAlreadyReachedLength(source string, length int) bool {
 	return utf8.RuneCountInString(source) >= length
 }
