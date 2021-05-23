@@ -30,6 +30,11 @@ func main() {
 	}
 
 	fmt.Printf("padded string: %s\n", padded)
-	// padded string: hello!!!!!!!!!!!!!!!
 }
+```
+
+- Output
+
+```
+padded string: hello!!!!!!!!!!!!!!!
 ```
