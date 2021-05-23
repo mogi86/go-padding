@@ -4,6 +4,7 @@
 We can specify whether we want string to be padded on the left or the right.
 
 For your reference, we can pad with `0` and spece by using [fmt](https://golang.org/pkg/fmt/) package.
+Therefore, we don't need use `go-padding` if you just want to pad with `0` and spece.
 
 ## Installation
 
